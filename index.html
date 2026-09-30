@@ -1,229 +1,119 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catatan Kenangan</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #333;
-        }
-        .card {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        .photo-container {
-            width: 100%;
-            height: 250px;
-            border-radius: 15px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .slide-wrapper {
-            position: relative;
-            min-height: 120px;
-            margin-bottom: 20px;
-        }
-        .slide {
-            display: none;
-            animation: textFade 0.5s ease-in-out;
-        }
-        .slide.active {
-            display: block;
-        }
-        h1 {
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        p {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #555;
-        }
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-        .nav-btn {
-            background: #34495e;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            transition: background 0.3s;
-        }
-        .nav-btn:hover {
-            background: #2c3e50;
-        }
-        .play-btn {
-            background: #ff6b6b;
-            color: white;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            transition: background 0.3s;
-            box-shadow: 0 4px 10px rgba(255, 107, 107, 0.3);
-            width: 100%;
-        }
-        .play-btn:hover {
-            background: #ff5252;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes textFade {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kata-Kata Terakhir</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0b0b0b, #242424);
+      font-family: Georgia, serif;
+      color: white;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 650px;
+      width: 100%;
+      text-align: center;
+      padding: 40px 30px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 25px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+      animation: muncul 1.5s ease;
+    }
+
+    /* FOTO */
+    .foto {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.15);
+      margin-bottom: 25px;
+    }
+
+    .judul {
+      font-size: 14px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 30px;
+    }
+
+    .kata {
+      font-size: 27px;
+      line-height: 1.7;
+      font-style: italic;
+      color: #f5f5f5;
+    }
+
+    .garis {
+      width: 60px;
+      height: 2px;
+      background: #888;
+      margin: 30px auto;
+    }
+
+    .penutup {
+      font-size: 14px;
+      color: #888;
+      letter-spacing: 2px;
+    }
+
+    @keyframes muncul {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <div class="card">
-        <!-- Bagian Foto Tetap 1 -->
-        <div class="photo-container">
-            <img src="1.jpg" alt="Foto Kenangan">
-        </div>
+  <div class="container">
 
-        <!-- Wadah Slide Kata-kata (Silakan tambah/ubah isi teks di bawah) -->
-        <div class="slide-wrapper">
-            <div class="slide active">
-                <h1>Terima Kasih</h1>
-                <p>Sebelumnya makasih sama kamu udah selalu buat aku Bahagia tiap Waktu setiap aku liat kamu foto kamu,di chat kamu dan lain" aku ga pernah merasa terganggu sama kamu and aku gak pernah marah semarah"nya ke kamu aku tau keinginan kamu tapi aku udah sadar hal" kecil yang kamu inginkan seperti share video ngabarin kamu itu hal kecil menurutku dulu tapi hal besar untuk kamu yang paling aku sadari mungkin kamu berfikir kamu tak merasa aku nganggep kamu ada,aku mau rubah semua itu kata kamu udah terlambat ya emang sudah terlambat untuk kamu karena udah terlalu sakit dan dalem luka yang kamu terima dan perlakuanku ke kamu terlalu kejam.
-            </div>
-            <div class="slide">
-                <h1>Sulit Di Lupakan</h1>
-                <p>Aku setiap hari kepikiran kamu karena mengingat betapa kejamnya aku ke kamu Waktu itu,terima kasih udah gak pernah marah sama aku kamu baik kamu pengertian sama aku yang nggak pernah baik sama kamu,namun kamu udah berhasil buat aku sadar, buat aku susah lupain kamu akupun heran sendiri kok bisa secinta ini aku kekamu fikiranku cuman ya ini timbal balik karena kamu cinta ke aku tapi aku egois dan sekarang aku harus menaggung karmaku dulu udah bikin kamu luka.
-            </div>
-            <div class="slide">
-                <h1>Harapan yang Tersisa</h1>
-                <p>Aku banyak aturan aku sering ngatur kamu sekaang kamu udah bebas karena juga karena aku ada di hidupmu cuman buat kamu gak tenang karena gak ngabarin nangis karena aku marah gak jelas</p>
-            </div>
-             <div class="slide">
-                <h1>PesanKu</h1>
-                <p>aku cuman berpersan ke kamu aku gak perenah seperti ini ke cewek lain mohon" itu karena aku saying cinta banget ke kamu impianku cuman sama kamu, jika aku tak bersamamu dan kamu Bersama orang lain sudah ku pastikan dia lebih baik dari pada aku,
-            </div>
-             <div class="slide">
-                <h1>Terlalu Memaksakan</h1>
-                <p>Jujur aku masih sayang sama kamu cinta sama kamu tapi aku sadar sesadar sadarnya aku gak pantas sama kamu. salam buat meysa ya 
-            </div>
-             <div class="slide">
-                <h1>Maafkan Aku Yang Jahat ini</h1>
-                <p>aku gak pernah bisa membayangkan betapa sakitnya kamu, karena aku yang berbuat aja gak bisa bayangin ya mungkin aku merasa kecewa sama diriku sendiri menahan ingin memiliki kamu seperti dulu.
-                </p>
-             </div>
-            <div class="slide">
-                <h1>Semoga Menemukanya</h1>
-                <p>Mengingat kita udah beberapa tahun Bersama nggak menuntut kamu harus bersamaku karena kenyamananmu harus di berikan pada orang pantas baik sama kamu.aku berjanji memengang janji yang kamu berikan nasehatmu.
-                </p>
-              </div>
-            <div class="slide">
-                <h1>Tak Pantas</h1>
-                <p>aku tidak berharap kamu Kembali karena juga itu pun gak kemungkinan besar bisa terjadi karena aku harus memantaskan diri buat kamu, mangkanya aku gak mau berdepat memaksa kamu untuk Kembali
-                </p>
-              </div>
-            <div class="slide">
-                <h1>Tak Mungkin</h1>
-                <p>pengen banget sebenernya chatan aja kek dulu Bahagia seneng tapi apalah daya kamu sudah kecewa kamu cuek sama aku, bukanya aku ingin kamu care,mungkin itu yang ternyaman buat kamu aku gak ada hak buat maksa kamu care sama aku ,aku tau, itu semua biar aku ngerasain apa yang kamu rasain, maka dari itu aku chat kmau sama aja melukai diriku sendiri karena mengingat kejamnya sikapku ke kamu
-                </p>
-              </div>
-            <div class="slide">
-                <h1>Terlalu Indah Untuk Dilupakan</h1>
-                <p>dan hati ini cuman ada kamu tak ada yang lain,aku tau masih banyak cewe di luar sana yang lebih cantik dari kamu tapi gak menuntut bisa seperti kamu yang perduli dan perhatian baik ke aku, jadi selagi di hatiku ada kamu aku tak pernah dekat sama siapapun.namun jika kamu sudah menenmukan lelaki yang bisa buatkamu nyaman Bahagia sudah cukup Waktu aku menyimpan hati ini buat kamu tapi jika kamu bertanya apakah kamu masih sayang sama aku tanpa ku jawab kamu harus tau jawabanya "Sampai Kapanpun"
-              </div>
-            <div class="slide">
-                <h1>Suatu penyesalanku</h1>
-                <p>aku menulis semua ini sambil mengingat penyesalanku dulu.aku tau kamu gak pernah mengahrapkan aku hadir lagi karena aku tau kamu gak mau menghaadirkan luka lagi</p>
-              </div>
-            <div class="slide">
-                <h1>Tak Cukup</h1>
-                <p>Memang jika cinta cuman dihadirkan dengan kesetiaan dan perasaan kedepanya hanya jadi cerita,aku tak punya apa" cuman punya rasa itu saja</p>
-            </div>
-             <div class="slide">
-                <h1></h1>
-                <p>terimakasih udah menjadi penyemangat kedua setelah ibuku yang sekarang sudah hilang satu penyemangat dan kebahagiaanku</p>
-            </div>
-              <div class="slide">
-                <h1>TERIMA KASIH YA</h1>
-                <p>nggak perlu di bales cukup kamu simpan aja tulisan ini
-                </p>
-             </div>
-            </div>
+    <!-- GANTI foto.jpg DENGAN FOTO KAMU -->
+    <img src="1.jpg" alt="Foto kenangan" class="foto">
 
-        <!-- Tombol Navigasi Slide -->
-        <div class="nav-container">
-            <button class="nav-btn" onclick="changeSlide(-1)">◀ Sebelum</button>
-            <button class="nav-btn" onclick="changeSlide(1)">Berikut ▶</button>
-        </div>
-
-        <!-- Backsound -->
-        <audio id="backsound" loop>
-            <source src="22.mp3" type="audio/mpeg">
-        </audio>
-        <button class="play-btn" onclick="toggleMusic()">🎵 Putar Musik</button>
+    <div class="judul">
+      BUAT APA KAU BUKA LAGI
     </div>
 
-    <script>
-        // Logika untuk Ganti Slide Teks
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
+    <div class="kata">
+      "Jika suatu hari aku tidak lagi ada di sampingmu,
+      jangan ingat bagaimana aku pergi.
+      Ingatlah bagaimana aku pernah berusaha
+      membuatmu bahagia,Aku tau kamu ingin seperti pasangan yang lainya yang bisa
+    buat pasangannya bahagia nggak mokondo seperti ku"
+    </div>
 
-        function changeSlide(direction) {
-            slides[currentSlide].classList.remove('active');
-            
-            currentSlide += direction;
+    <div class="garis"></div>
 
-            // Jika di ujung slide, putar balik ke awal/akhir
-            if (currentSlide >= slides.length) {
-                currentSlide = 0;
-            } else if (currentSlide < 0) {
-                currentSlide = slides.length - 1;
-            }
+    <div class="penutup">
+      — Terima kasih untuk semuanya.
+    </div>
 
-            slides[currentSlide].classList.add('active');
-        }
+  </div>
 
-        // Logika untuk Musik
-        const audio = document.getElementById('backsound');
-        const btn = document.querySelector('.play-btn');
-
-        function toggleMusic() {
-            if (audio.paused) {
-                audio.play();
-                btn.textContent = "❚❚ Jeda Musik";
-            } else {
-                audio.pause();
-                btn.textContent = "🎵 Putar Musik";
-            }
-        }
-    </script>
 </body>
 </html>
