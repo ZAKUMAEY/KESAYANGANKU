@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KATA YANG TERUCAP UNTUK TERAKHIR</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fcefe9 0%, #c6dbda 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            color: #444;
+        }
+
+        /* Container Card Utama */
+        .card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+            max-width: 420px;
+            width: 100%;
+            overflow: hidden;
+            padding: 25px;
+            text-align: center;
+        }
+
+        /* Bagian Bingkai Foto */
+        .photo-frame {
+            width: 100%;
+            height: 320px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Area Teks Cerita */
+        .story-container {
+            min-height: 90px; /* Menjaga tinggi agar tombol tidak bergeser turun naik */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+
+        .story-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+            color: #333;
+            font-weight: 500;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            display: none;
+        }
+
+        /* Efek memunculkan teks dengan halus */
+        .story-text.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Container Tombol Navigasi */
+        .navigation-box {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Desain Tombol */
+        .nav-btn {
+            background-color: #f1f3f5;
+            color: #555;
+            border: none;
+            padding: 12px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex: 1;
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            background-color: #e2e6ea;
+            color: #111;
+            transform: translateY(-2px);
+        }
+
+        /* Tombol Utama / Lanjut */
+        .nav-btn.next-btn {
+            background-color: #34495e;
+            color: #fff;
+        }
+
+        .nav-btn.next-btn:hover:not(:disabled) {
+            background-color: #2c3e50;
+            color: #fff;
+        }
+
+        /* Style jika tombol dinonaktifkan (di awal atau akhir kata) */
+        .nav-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Indikator Posisi Halaman (Titik Kecil) */
+        .indicator {
+            font-size: 0.8rem;
+            color: #aaa;
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <!-- 1. Foto Menetap di Atas -->
+        <div class="photo-frame">
+            <!-- GANTI 'kenangan.jpg' dengan file fotomu -->
+            <img src="kenangan.jpg" alt="Foto Kenangan Kita">
+        </div>
+
+        <!-- 2. Kumpulan Kata yang Akan Berganti-ganti -->
+        <div class="story-container">
+            <!-- Tambah atau ubah kalimat di dalam class "story-text" ini -->
+            <p class="story-text active">Hay Mayang septia sesorang yang baik kekasihku dulu ini adalah perkataan terakhir ku ke kamu karena aku sudah merasa lelah selama ini sudah mengejarmu dan berharap kamu kembali kepadaku bukanya aku menyerah untuk mengerjarmu tapi aku tau diri hari ini dan entah kapan waktunya dan jika itu benar" terwujud kamu bisa menerimaku menjadi sesuatu yang kita impikan dulu</p>
+            <p class="story-text">Mungkin sayang ini kamu punya seseorang yang lebih bisa menghargai dan buat kamu bahagia daripada aku percuma rasanya ketika aku berusaha menjadi apa yang kamu inginkan dulu </p>
+            <p class="story-text">Aku cuman berharap apa yang aku lakukan saat ini tidak sia" Kelak, kamu cantik baik perhatian aku yakin kamu bisa memiliki seseorang yang lebih dari aku, aku berharap kamu tidak menyesal ketika aku pergi untuk kebahagiaanmu saat ini</p>
+            <p class="story-text">Aku pergi bukan karena aku tak sayang tapi karena aku ingin memantaskan diri untukmu tenang saja aku selalu di samping mu walau kau tak menginginkanya, Kamu begini karena sikapku bukan karena apapun</p>
+            <p class="story-text">Rasanya setiap hari pikiranku tak lepas dari dirimu OVT setiap Waktu, yah aku lupa bahwa sekarang kamu bukan siapa" ku lagi tapi aku tak bisa menuntut lebih ataupun melarang apa yang kamu lakukan.
+            <p class="story-text">selagi apapun yang kamu lakukan itu buat kamu senang lakukanlah jika ada sesuatu yang ta kau sukai menghindar dan tinggalkanlah</p>
+            <p class="story-text">terima kasih banyak sudah buat aku Bahagia terutama sadar akan apa yang telah aku lakukan kepadamu, aku tak akan pernah lupa apa yang kamu perbuat padaku kau sudah buat aku bahagia </p>
+            <p class="story-text">baru kali ini ada seseorang buat aku jatuh cinta sekali dan cukup sekali ini dan terakhir kalinya</p>
+            <p class="story-text">yang perlu kau ingat aku tak pernah takut kehilanganmu bukan karena aku sangat percaya kau tak akan pergi namun kenyataanya kau ingin sendiri itupun bukan disebabkan oleh dirimu tapi karena diriku sendiri mungkin aku kurang kuat menggenggamu </p>
+            <p class="story-text">kamu tak perlu bertanya kesalahanku dan sikap serta kelakuanku yang kau tak sukai aku sudah mencatatnya di fikiranku </p>
+            <p class="story-text">ooiya aku pernah berkata kau akan aku ratukan walau kau bukan siapa"ku aku mohon apa yang akan aku lakukan ke dirimu jika kau menolak kembalikanlah dan bilang mungkin kamu risih atau kamu udah ada seseorang yang lain</p>
+            <p class="story-text">karena tolong hargai pasanganmu atau seseorang yang udah buat kamu bahagia sekarang, yah mungkin terasa sakit jika kau menolak tapi menurutku kebih baik kau jujur dari pada berbohong pada diriku </p>
+            <p class="story-text">aku menulisa semua ini mengikuti kata yang ada di fikiranku , aku cumin bisa berkata dan berusaha semampuku untuk dirimu </p>
+            <p class="story-text">oiyaa aku selama kita berhubungan tak pernah sama sekali mendengar atau merespon kesalahanmu tanpa terkecuali masalah yang pernah kita bahas, karena setiap jalan ada saja rintangan </p>
+            <p class="story-text">mungkin kau ta pernah melihat diriku di social media karena aku tau kau tak menyukainya ya mungkin fikiranku dan kelakuanku yang tak kau sukai dulu kamu gak pernah melarang karena kamu takut aku yang marah tapi sejujurnya selama kita berhubungan dlu sejatinya aku tak pernah marah padamu </p>
+            <p class="story-text">alhamdulillah aku sekarang berubah sedikit demi sedikit untuk diriku </p>
+            <p class="story-text">dan ini aku berbicara bahwa aku mulai sekarang belajar ikhlas bukan aku akan melupakan mu tapi aku akan diam tak mengganggu dirimu dan waktumu biarkan kaubahagia dengan caramu karena aku ingat katamu </p>
+            <p class="story-text">" KITA KAN UDAH GAK ADA HUBUNGAN "</p>
+            <p class="story-text">aku tau tapi di hatiku cumin ada kamu mulai sampai kapanpun aku tak akan lupa padamu dan tak akan mencari penggantimu sampai melihat kau bahagia dengan seseorang yang memang sudah buat kamu nyaman </p>
+            <p class="story-text">"Titik Tertinggi Mencintaimu adalah mengiklaskan dirimu" </p>
+            <p class="story-text">Cinta hanya ada 2 pilihan Antara Jempuut dengan Kebranian Atau Tinggalkan dengan Keikhlasan </p>
+            <p class="story-text">Aku gak pernah gengsi dengan perasaanku sendiri padamu karena aku takut kelak diriku menyesal begitupun denganmu </p>
+            <p class="story-text">Simpan ya linknya </p>
+            <p class="story-text">SALAM SAYANG DARI KU UNTUKMU</p>
+        </div>
+
+        <!-- 3. Tombol Pindah Kata (Navigasi) -->
+        <div class="navigation-box">
+            <button class="nav-btn" id="prevBtn" disabled>Kembali</button>
+            <button class="nav-btn next-btn" id="nextBtn">Lanjut</button>
+        </div>
+
+        <!-- Penunjuk halaman saat ini -->
+        <div class="indicator" id="pageIndicator">1 / 5</div>
+    </div>
+
+    <script>
+        // Mengambil elemen-elemen HTML
+        const paragraphs = document.querySelectorAll('.story-text');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const indicator = document.getElementById('pageIndicator');
+        
+        let currentIndex = 0;
+        const totalItems = paragraphs.length;
+
+        // Fungsi memperbarui tampilan teks dan tombol
+        function updateStory(index) {
+            // Sembunyikan teks yang aktif saat ini
+            paragraphs.forEach(p => p.classList.remove('active'));
+            
+            // Tampilkan teks baru sesuai index
+            paragraphs[index].classList.add('active');
+
+            // Atur status tombol Kembali (Mundur)
+            if (index === 0) {
+                prevBtn.disabled = true;
+            } else {
+                prevBtn.disabled = false;
+            }
+
+            // Atur status tombol Lanjut (Maju)
+            if (index === totalItems - 1) {
+                nextBtn.innerText = "Selesai ❤️";
+                // Kamu juga bisa membuat tombol tidak bisa diklik di akhir jika mau dengan: nextBtn.disabled = true;
+            } else {
+                nextBtn.innerText = "Lanjut";
+                nextBtn.disabled = false;
+            }
+
+            // Perbarui teks indikator di bawah
+            indicator.innerText = `${index + 1} / ${totalItems}`;
+        }
+
+        // Event saat tombol Lanjut diklik
+        nextBtn.addEventListener('click', () => {
+            if (currentIndex < totalItems - 1) {
+                currentIndex++;
+                updateStory(currentIndex);
+            }
+        });
+
+        // Event saat tombol Kembali diklik
+        prevBtn.addEventListener('click', () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateStory(currentIndex);
+            }
+        });
+
+        // Inisialisasi tampilan awal
+        updateStory(currentIndex);
+    </script>
+</body>
+</html>
