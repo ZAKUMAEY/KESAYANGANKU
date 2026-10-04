@@ -1,2 +1,0 @@
-# PHOTOBOTH
-Zakuma Studio
